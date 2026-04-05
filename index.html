@@ -3,20 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacob Yoon Portfolio</title>
+  <title>Jacob Yoon | Embedded Systems Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Jacob Yoon, an Electrical Engineering student focused on embedded systems, robotics hardware, and PCB design."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Jacob Yoon</h1>
-  <p>Electrical Engineering @ Northeastern University</p>
-  <p>Minor in Robotics</p>
-  <p>I build embedded systems that interact with the physical world.</p>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="#top">Jacob Yoon</a>
+      <div class="nav-links">
+        <a href="#courses">Courses</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+      </div>
+    </nav>
+  </header>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>STM32 Actuator Controller</li>
-    <li>DRV8833 Motor Driver PCB</li>
-    <li>Mars Rover PCB</li>
-    <li>Let’s Power Lego City</li>
-  </ul>
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Electrical Engineering @ Northeastern University</p>
+        <h1>
+          Embedded systems, robotics hardware, and PCB design for real-world
+          control.
+        </h1>
+        <p class="hero-text">
+          I build embedded systems that interact with the physical world,
+          combining control logic, electronics, and hardware validation into
+          reliable engineering work.
+        </p>
+        <div class="hero-tags">
+          <span>STM32</span>
+          <span>Motor Control</span>
+          <span>PCB Design</span>
+          <span>Robotics</span>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <h2>Quick Summary</h2>
+        <ul>
+          <li>Minor in Robotics with a focus on embedded control systems</li>
+          <li>Hands-on experience across firmware, PCB design, and bring-up</li>
+          <li>Background in field troubleshooting and network systems maintenance</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section grid-section">
+      <article class="card">
+        <p class="section-label">Focus</p>
+        <h2>What I build</h2>
+        <ul>
+          <li>Embedded systems with STM32 and real-time control</li>
+          <li>Motor control hardware for robotics applications</li>
+          <li>PCB design for actuator and sensor systems</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="section-label">Strength</p>
+        <h2>How I work</h2>
+        <ul>
+          <li>Strong hardware and software integration</li>
+          <li>Debugging based on real system behavior</li>
+          <li>Design decisions grounded in testing and validation</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="courses" class="section">
+      <div class="section-heading">
+        <p class="section-label">Courses</p>
+        <h2>Relevant coursework</h2>
+      </div>
+      <div class="pill-grid">
+        <span>Circuits and Signals</span>
+        <span>Embedded Design</span>
+        <span>Computing Fundamentals</span>
+        <span>Fundamentals of Networks</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <p class="section-label">Projects</p>
+        <h2>Selected engineering work</h2>
+        <p>
+          My projects focus on control reliability, hardware design, and clear
+          validation of system behavior.
+        </p>
+      </div>
+
+      <div class="project-list">
+        <article class="project-card featured">
+          <div>
+            <p class="project-type">Featured Project</p>
+            <h3>STM32 Actuator Controller</h3>
+          </div>
+          <p>
+            Built a robotic gripper actuator controller using STM32 with UART
+            command input, PWM motor control, and encoder feedback for
+            repeatable position-based motion.
+          </p>
+          <ul>
+            <li>Redesigned the system from open-loop timing control to closed-loop encoder feedback</li>
+            <li>Reduced position variation from about 17% to roughly +/-2%</li>
+            <li>Implemented low-level control logic in C with home reference and software limits</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <p class="project-type">PCB Design</p>
+            <h3>DRV8833 Motor Driver PCB</h3>
+          </div>
+          <p>
+            Designed a DRV8833-based motor driver PCB for an STM32-controlled
+            actuator system with separated 6V motor and 3.3V logic domains.
+          </p>
+          <ul>
+            <li>Placed bulk and local decoupling capacitors for stable drive behavior</li>
+            <li>Separated power and signal routing with wide current traces and stitched grounds</li>
+            <li>Assembled and validated bidirectional motor control with the actuator controller</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <p class="project-type">System Integration</p>
+            <h3>Mars Rover PCB</h3>
+          </div>
+          <p>
+            Developed a temperature sensing PCB for rover system integration
+            using TMP1075 over I2C, 3.3V regulation, and hardware validation
+            through bench testing.
+          </p>
+          <ul>
+            <li>Separated 5V input and 3.3V regulation for cleaner power delivery</li>
+            <li>Used pull-ups and short signal paths to improve I2C reliability</li>
+            <li>Fabricated and tested the board to confirm stable sensor readings</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <p class="project-type">Early Project</p>
+            <h3>Let's Power Lego City</h3>
+          </div>
+          <p>
+            Created an interactive hardware-software system using Arduino
+            control logic, mechanical components, and MATLAB visualization to
+            respond to circuit state changes.
+          </p>
+          <ul>
+            <li>Designed physical components with AutoCAD and SolidWorks</li>
+            <li>Implemented Arduino-based logic in C++ for conditional responses</li>
+            <li>Built a visualization pipeline to display state-based system behavior</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="section-heading">
+        <p class="section-label">Experience</p>
+        <h2>Hands-on engineering background</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <p>Northeastern Mars Rover Team</p>
+            <span>Sep 2025 - Present</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Electrical Engineer</h3>
+            <p>
+              Designed and fabricated thermal sensor PCB prototypes using KiCad,
+              integrated STM32-based I2C sensor reading, and validated system
+              performance through hardware testing.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <p>Republic of Korea Air Force</p>
+            <span>Aug 2023 - May 2025</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Network Systems Maintenance Sergeant</h3>
+            <p>
+              Maintained large-scale network infrastructure, troubleshot
+              Cisco/HPE systems, worked with fiber and UTP cabling, and built
+              relay-based alert systems under real operational constraints.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
