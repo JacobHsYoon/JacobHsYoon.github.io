@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRV8833 Motor Driver PCB | Jacob Yoon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="../index.html#projects">Jacob Yoon</a>
+      <nav class="topbar-nav">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </nav>
+    </div>
+  </header>
+  <main class="project-page">
+    <section class="project-hero">
+      <p class="project-kicker">Project Detail</p>
+      <h1>DRV8833 Motor Driver PCB</h1>
+      <p class="project-intro">
+        A custom motor driver PCB designed around the DRV8833 for an
+        STM32-controlled actuator system, with separate motor and logic domains
+        and layout decisions focused on stable embedded motor control.
+      </p>
+      <div class="project-actions">
+        <a href="../index.html#projects">Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="detail-grid">
+      <article class="detail-card">
+        <h2>Goal</h2>
+        <p>
+          Design a DRV8833-based motor driver PCB for a DC motor system
+          controlled by STM32, with a 6V motor rail and a separate 3.3V logic
+          domain.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <h2>Key Focus</h2>
+        <ul>
+          <li>Power and logic domain separation</li>
+          <li>Bulk and local decoupling capacitor placement</li>
+          <li>Stable motor drive for encoder-based control</li>
+          <li>Ground strategy and current return path design</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="detail-section">
+      <h2>Overview</h2>
+      
+      <p>
+        This board was designed to support a motor control system driven by an
+        STM32 actuator controller. The main challenge was building a compact PCB
+        that could handle the motor power path cleanly while keeping the logic
+        side stable and noise-aware.
+      </p>
+      <p>
+        The design separated the 6V motor rail from the 3.3V logic signals and
+        emphasized capacitor placement, routing strategy, and solid ground
+        return paths to support reliable bidirectional motor operation.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Portfolio Slides</h2>
+      <img
+        src="../images/drv8833-overview-slide.png"
+        alt="DRV8833 overview slide"
+        class="detail-image"
+      />
+      <img
+        src="../images/drv8833-layout-slide.png"
+        alt="DRV8833 PCB layout decisions slide"
+        class="detail-image"
+      />
+      <img
+        src="../images/drv8833-validation-slide.png"
+        alt="DRV8833 hardware bring-up and validation slide"
+        class="detail-image"
+      />
+      <p>
+        Best slides to include here are the architecture overview, the annotated
+        PCB layout slide, and the bring-up and validation slide with schematic
+        and board images.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Design Decisions</h2>
+      <ul>
+        <li>Placed a 100uF bulk capacitor close to the motor supply input</li>
+        <li>Added local decoupling capacitors near the driver for cleaner switching behavior</li>
+        <li>Separated power routing from signal routing to reduce interference</li>
+        <li>Used wider traces for higher-current motor paths</li>
+      </ul>
+      <p>
+        Rather than treating the PCB as only a net connection problem, the
+        layout was planned around current flow and return paths. That meant
+        thinking about where current entered, how it moved through the driver,
+        and how the ground returned under realistic motor load.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Hardware Bring-up and Validation</h2>
+      <div class="detail-grid">
+        <article class="detail-card">
+          <h3>Bring-up</h3>
+          <ul>
+            <li>Assembled and tested the DRV8833 motor driver PCB</li>
+            <li>Integrated the board with the STM32 actuator controller</li>
+            <li>Verified that the board powered and responded as intended</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Validation</h3>
+          <ul>
+            <li>Confirmed bidirectional motor control through PWM and direction signals</li>
+            <li>Observed stable operation with the encoder-based control system</li>
+            <li>Verified that the PCB could support the actuator control workflow in practice</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Motor driver PCB design depends heavily on power path thinking, not only schematic correctness</li>
+        <li>Capacitor placement and grounding choices have a direct impact on practical control stability</li>
+        <li>PCB validation matters most when the board is tested as part of a larger system, not in isolation</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

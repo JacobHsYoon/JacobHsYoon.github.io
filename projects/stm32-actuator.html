@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STM32 Actuator Controller | Jacob Yoon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="../index.html#projects">Jacob Yoon</a>
+      <nav class="topbar-nav">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero">
+      <p class="project-kicker">Project Detail</p>
+      <h1>STM32 Actuator Controller</h1>
+      <p class="project-intro">
+        A robotic gripper actuator controller built around STM32, redesigned
+        from simple time-based control toward repeatable encoder-based
+        position control.
+      </p>
+      <div class="project-actions">
+        <a href="https://youtube.com/shorts/SIvFva_gntc" target="_blank" rel="noreferrer">Demo Video</a>
+        <a href="github-link-soon" target="_blank" rel="noreferrer">Code</a>
+        <a href="../index.html#projects">Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="detail-grid">
+      <article class="detail-card">
+        <h2>Goal</h2>
+        <p>
+          Design a controllable robotic gripper actuator using STM32 with
+          real-time command input and position-based control.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <h2>Key Features</h2>
+        <ul>
+          <li>UART command interface with 1-byte interrupt handling</li>
+          <li>PWM motor control with encoder feedback</li>
+          <li>Home reference and software limits</li>
+          <li>Closed-loop redesign for repeatable motion</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="detail-section">
+      <h2>Overview</h2>
+    
+      <p>
+        This project started with a time-based open-loop motor control approach.
+        In testing, the same command duration produced different gripper motion
+        because of load and friction, which made the system unreliable for
+        repeatable actuation.
+      </p>
+      <p>
+        I then redesigned the controller around encoder feedback so the system
+        could compare target position against current position and converge more
+        consistently to the desired state.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Portfolio Slides</h2>
+      <img
+        src="../images/stm32-overview-slide.png"
+        alt="STM32 actuator controller overview slide"
+        class="detail-image"
+      />
+      <img
+        src="../images/stm32-engineering-process-slide.png"
+        alt="STM32 engineering process slide"
+        class="detail-image"
+      />
+      <img
+        src="../images/stm32-debugging-slide.png"
+        alt="STM32 debugging and decision slide"
+        class="detail-image"
+      />
+      <p>
+        Recommended screenshots for this page: the overview slide, the
+        engineering process comparison, and the debugging and decision slide.
+        Those visuals communicate the control redesign much better than plain
+        text alone.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Engineering Process</h2>
+      <ul>
+        <li>Initial system used time-based open-loop control for simplicity</li>
+        <li>Repeated tests showed about 597 to 711 encoder counts for the same 500 ms command</li>
+        <li>This represented roughly 17% variation and showed the limits of open-loop control</li>
+        <li>The system was redesigned to use encoder counts as feedback for target-based motion</li>
+      </ul>
+    </section>
+
+    <section class="detail-section">
+      <h2>Debugging and Decision</h2>
+      <div class="detail-grid">
+        <article class="detail-card">
+          <h3>Open-loop Result</h3>
+          <ul>
+            <li>Simple implementation and fast early testing</li>
+            <li>Position changed depending on load and friction</li>
+            <li>Could not guarantee consistent motion</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Closed-loop Result</h3>
+          <ul>
+            <li>Target position around +/-2100 to +/-2200 counts</li>
+            <li>Typical error around +/-20 to +/-40 counts</li>
+            <li>Worst-case error around +/-100 counts</li>
+          </ul>
+        </article>
+      </div>
+      <p>
+        Overall, the redesign improved positioning consistency by roughly 4 to 5
+        times and made the actuator much more reliable for future robotics use.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Real hardware behavior often reveals issues that simple control logic hides</li>
+        <li>Feedback is essential when actuator behavior changes with load</li>
+        <li>Measured redesign decisions are often more effective than forcing an initial architecture</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

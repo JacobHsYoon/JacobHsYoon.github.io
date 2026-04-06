@@ -11,182 +11,137 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a class="brand" href="#top">Jacob Yoon</a>
-      <div class="nav-links">
-        <a href="#courses">Courses</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="#about">Jacob Yoon</a>
+      <nav class="topbar-nav">
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
-      </div>
-    </nav>
+        <a href="#courses">Courses</a>
+        <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero section">
-      <div class="hero-copy">
-        <p class="eyebrow">Electrical Engineering @ Northeastern University</p>
-        <h1>
-          Embedded systems, robotics hardware, and PCB design for real-world
-          control.
-        </h1>
-        <p class="hero-text">
-          I build embedded systems that interact with the physical world,
-          combining control logic, electronics, and hardware validation into
-          reliable engineering work.
+  <div class="layout">
+    <aside class="sidebar">
+      <img
+        src="images/profile.jpg"
+        alt="Portrait of Jacob Yoon"
+        class="profile-image"
+      />
+
+      <h1>Jacob Yoon</h1>
+      <p class="sidebar-role">Electrical Engineering @ Northeastern University</p>
+      <p class="sidebar-subrole">Minor in Robotics</p>
+
+      <div class="sidebar-links">
+        <p>Boston, MA</p>
+        <a href="mailto:yoon.h@northeastern.edu">Email</a>
+        <a href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jacob-yoon-221444275" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section id="about" class="section">
+        <h2>About</h2>
+        <p class="lead">
+          Hi! I'm Jacob, an Electrical Engineering student at Northeastern
+          University with a minor in Robotics. My interests are in embedded
+          systems, robotics hardware, and PCB design, especially projects that
+          connect control logic with real physical behavior.
         </p>
-        <div class="hero-tags">
-          <span>STM32</span>
-          <span>Motor Control</span>
-          <span>PCB Design</span>
-          <span>Robotics</span>
-        </div>
-      </div>
-
-      <aside class="hero-panel">
-        <h2>Quick Summary</h2>
-        <ul>
-          <li>Minor in Robotics with a focus on embedded control systems</li>
-          <li>Hands-on experience across firmware, PCB design, and bring-up</li>
-          <li>Background in field troubleshooting and network systems maintenance</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="section grid-section">
-      <article class="card">
-        <p class="section-label">Focus</p>
-        <h2>What I build</h2>
-        <ul>
-          <li>Embedded systems with STM32 and real-time control</li>
-          <li>Motor control hardware for robotics applications</li>
-          <li>PCB design for actuator and sensor systems</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <p class="section-label">Strength</p>
-        <h2>How I work</h2>
-        <ul>
-          <li>Strong hardware and software integration</li>
-          <li>Debugging based on real system behavior</li>
-          <li>Design decisions grounded in testing and validation</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="courses" class="section">
-      <div class="section-heading">
-        <p class="section-label">Courses</p>
-        <h2>Relevant coursework</h2>
-      </div>
-      <div class="pill-grid">
-        <span>Circuits and Signals</span>
-        <span>Embedded Design</span>
-        <span>Computing Fundamentals</span>
-        <span>Fundamentals of Networks</span>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="section-heading">
-        <p class="section-label">Projects</p>
-        <h2>Selected engineering work</h2>
         <p>
-          My projects focus on control reliability, hardware design, and clear
-          validation of system behavior.
+          My recent work includes STM32-based actuator control, motor driver PCB
+          design, and sensor integration for robotics systems. I enjoy building
+          hardware that can be tested, measured, and improved through careful
+          debugging and validation. I also bring hands-on troubleshooting
+          experience from network systems maintenance and field engineering work
+          in the Republic of Korea Air Force.
         </p>
-      </div>
+      </section>
 
-      <div class="project-list">
-        <article class="project-card featured">
-          <div>
-            <p class="project-type">Featured Project</p>
+      <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <article class="project-entry">
+          
+          <div class="project-body">
             <h3>STM32 Actuator Controller</h3>
+            <p>
+              Built a robotic gripper actuator controller using STM32 with UART
+              command input, PWM motor control, and encoder feedback for
+              repeatable position-based motion.
+            </p>
+            <div class="project-actions">
+              <a href="projects/stm32-actuator.html">View Details</a>
+              <a href="https://youtube.com/shorts/SIvFva_gntc" target="_blank" rel="noreferrer">Demo Video</a>
+            </div>
           </div>
-          <p>
-            Built a robotic gripper actuator controller using STM32 with UART
-            command input, PWM motor control, and encoder feedback for
-            repeatable position-based motion.
-          </p>
-          <ul>
-            <li>Redesigned the system from open-loop timing control to closed-loop encoder feedback</li>
-            <li>Reduced position variation from about 17% to roughly +/-2%</li>
-            <li>Implemented low-level control logic in C with home reference and software limits</li>
-          </ul>
         </article>
 
-        <article class="project-card">
-          <div>
-            <p class="project-type">PCB Design</p>
+        <article class="project-entry">
+         
+          <div class="project-body">
             <h3>DRV8833 Motor Driver PCB</h3>
+            <p>
+              Designed a DRV8833-based motor driver PCB for an STM32-controlled
+              actuator system with separated 6V motor and 3.3V logic domains.
+            </p>
+            <div class="project-actions">
+              <a href="projects/drv8833-pcb.html">View Details</a>
+            </div>
           </div>
-          <p>
-            Designed a DRV8833-based motor driver PCB for an STM32-controlled
-            actuator system with separated 6V motor and 3.3V logic domains.
-          </p>
-          <ul>
-            <li>Placed bulk and local decoupling capacitors for stable drive behavior</li>
-            <li>Separated power and signal routing with wide current traces and stitched grounds</li>
-            <li>Assembled and validated bidirectional motor control with the actuator controller</li>
-          </ul>
         </article>
 
-        <article class="project-card">
-          <div>
-            <p class="project-type">System Integration</p>
+        <article class="project-entry">
+          
+          <div class="project-body">
             <h3>Mars Rover PCB</h3>
+            <p>
+              Developed a temperature sensing PCB for rover system integration
+              using TMP1075 over I2C, 3.3V regulation, and hardware validation
+              through bench testing.
+            </p>
+            <div class="project-actions">
+              <a href="projects/mars-rover-pcb.html">View Details</a>
+            </div>
           </div>
-          <p>
-            Developed a temperature sensing PCB for rover system integration
-            using TMP1075 over I2C, 3.3V regulation, and hardware validation
-            through bench testing.
-          </p>
-          <ul>
-            <li>Separated 5V input and 3.3V regulation for cleaner power delivery</li>
-            <li>Used pull-ups and short signal paths to improve I2C reliability</li>
-            <li>Fabricated and tested the board to confirm stable sensor readings</li>
-          </ul>
         </article>
 
-        <article class="project-card">
-          <div>
-            <p class="project-type">Early Project</p>
+        <article class="project-entry">
+          
+          <div class="project-body">
             <h3>Let's Power Lego City</h3>
+            <p>
+              Created an interactive hardware-software system using Arduino
+              control logic, mechanical components, and MATLAB visualization to
+              respond to circuit state changes.
+            </p>
+            <div class="project-actions">
+              <a href="projects/lego-city.html">View Details</a>
+            </div>
           </div>
-          <p>
-            Created an interactive hardware-software system using Arduino
-            control logic, mechanical components, and MATLAB visualization to
-            respond to circuit state changes.
-          </p>
-          <ul>
-            <li>Designed physical components with AutoCAD and SolidWorks</li>
-            <li>Implemented Arduino-based logic in C++ for conditional responses</li>
-            <li>Built a visualization pipeline to display state-based system behavior</li>
-          </ul>
         </article>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience" class="section">
-      <div class="section-heading">
-        <p class="section-label">Experience</p>
-        <h2>Hands-on engineering background</h2>
-      </div>
+      <section id="experience" class="section">
+        <h2>Experience</h2>
 
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <p>Northeastern Mars Rover Team</p>
+        <article class="experience-entry">
+          <div class="experience-meta">
+            <strong>Northeastern Mars Rover Team</strong>
             <span>Sep 2025 - Present</span>
           </div>
-          <div class="timeline-content">
+          <div class="experience-body">
             <h3>Electrical Engineer</h3>
             <p>
               Designed and fabricated thermal sensor PCB prototypes using KiCad,
@@ -196,12 +151,12 @@
           </div>
         </article>
 
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <p>Republic of Korea Air Force</p>
+        <article class="experience-entry">
+          <div class="experience-meta">
+            <strong>Republic of Korea Air Force</strong>
             <span>Aug 2023 - May 2025</span>
           </div>
-          <div class="timeline-content">
+          <div class="experience-body">
             <h3>Network Systems Maintenance Sergeant</h3>
             <p>
               Maintained large-scale network infrastructure, troubleshot
@@ -210,8 +165,70 @@
             </p>
           </div>
         </article>
-      </div>
-    </section>
-  </main>
+      </section>
+
+      <section id="courses" class="section">
+        <h2>Courses</h2>
+        <div class="course-list">
+          <details class="course-item">
+            <summary>EECE2150: Circuits and Signals (Spring '26)</summary>
+            <p>
+              Studied circuit behavior, signal analysis, and the core principles
+              used to understand electrical systems in both time and frequency domains.
+            </p>
+          </details>
+
+          <details class="course-item">
+            <summary>EECE2160: Embedded Design: Enabling Robotics (Spring '26)</summary>
+            <p>
+              Worked with embedded systems concepts including microcontrollers,
+              hardware interfacing, and low-level control for real devices.
+            </p>
+          </details>
+
+          <details class="course-item">
+            <summary>EECE 2140: Computing Fundamentals (Fall '25)</summary>
+            <p>
+              Built a foundation in programming, problem solving, and the core
+              logic used across software and embedded development.
+            </p>
+          </details>
+
+          <details class="course-item">
+            <summary>EECE2540: Fundamentals of Networks (Spring '26)</summary>
+            <p>
+              Learned the basics of network architecture, communication systems,
+              and practical networking concepts that support reliable infrastructure.
+            </p>
+          </details>
+
+          <details class="course-item">
+            <summary>MATH2341: Differential Equations and Linear Algebra (Fall '25)</summary>
+            <p>
+              Studies ordinary differential equations, their applications, 
+              and techniques for solving them including numerical methods
+              (through computer labs using MS Excel and MATLAB), Laplace transforms,
+              and linear algebra. Topics include linear and nonlinear first- and second-order
+              equations and applications include electrical and mechanical systems, forced oscillation,
+              and resonance. Topics from linear algebra, such as matrices, row-reduction, vector spaces,
+              and eigenvalues/eigenvectors, are developed and applied to systems of differential equations.
+            </p>
+          </details>
+          
+          <details class="course-item">
+            <summary>MATH3081: Probabilities and Statistics (Spring '26)</summary>
+            <p>
+              Focuses on probability theory. Topics include sample space; 
+              conditional probability and independence; discrete and continuous probability distribution
+              for one and for several random variables; expectation; variance; special distributions 
+              including binomial, Poisson, and normal distributions; law of large numbers; 
+              and central limit theorem. Also introduces basic statistical theory including estimation
+              of parameters, confidence intervals, and hypothesis testing.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>

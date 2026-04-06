@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mars Rover PCB | Jacob Yoon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="../index.html#projects">Jacob Yoon</a>
+      <nav class="topbar-nav">
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+      </nav>
+    </div>
+  </header>
+  <main class="project-page">
+    <section class="project-hero">
+      <p class="project-kicker">Project Detail</p>
+      <h1>Mars Rover PCB</h1>
+      <p class="project-intro">
+        A temperature sensing PCB designed for rover system integration, built
+        around 5V input, 3.3V regulation, TMP1075 I2C communication, and
+        hardware validation through fabrication and testing.
+      </p>
+      <div class="project-actions">
+        <a href="../index.html#projects">Back to Projects</a>
+      </div>
+    </section>
+
+    <section class="detail-grid">
+      <article class="detail-card">
+        <h2>Goal</h2>
+        <p>
+          Design a PCB for temperature sensing and system integration that could
+          interface cleanly with a larger rover platform.
+        </p>
+      </article>
+
+      <article class="detail-card">
+        <h2>System</h2>
+        <ul>
+          <li>5V input with onboard 3.3V regulation</li>
+          <li>TMP1075 temperature sensor over I2C</li>
+          <li>MCU-facing interface for data use in the rover system</li>
+          <li>LED and connector integration for system-level usability</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="detail-section">
+      <h2>Overview</h2>
+      
+      <p>
+        This project focused on creating a practical sensor board for rover
+        integration rather than only a standalone electronics exercise. The
+        design needed stable power regulation, reliable I2C communication, and
+        a layout that made sense as part of a larger physical system.
+      </p>
+      <p>
+        The board included both sensing and interface elements, which made
+        component placement and system organization important from the beginning
+        of the design process.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Portfolio Slides</h2>
+      <img
+        src="../images/mars-overview-slide.png"
+        alt="Mars Rover PCB overview slide"
+        class="detail-image"
+      />
+      <img
+        src="../images/mars-validation-slide.png"
+        alt="Mars Rover PCB validation slide"
+        class="detail-image"
+      />
+      <p>
+        The strongest slide pair for this page is the initial overview slide
+        plus the PCB design and hardware validation slide.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Design Strategy</h2>
+      <ul>
+        <li>Separated 5V input and 3.3V power domains for cleaner regulation</li>
+        <li>Placed local decoupling near the regulator and sensor</li>
+        <li>Added pull-up resistors for stable I2C communication</li>
+        <li>Kept SDA and SCL routing short and organized</li>
+        <li>Used ground pours and functional block placement for cleaner layout</li>
+      </ul>
+      <p>
+        The layout was shaped around signal integrity and system readability.
+        That meant keeping the communication path clean, maintaining sensible
+        spacing around power components, and grouping parts according to their
+        function in the rover system.
+      </p>
+    </section>
+
+    <section class="detail-section">
+      <h2>Hardware Validation</h2>
+      <div class="detail-grid">
+        <article class="detail-card">
+          <h3>Fabrication</h3>
+          <ul>
+            <li>Fabricated and assembled the PCB</li>
+            <li>Checked component placement and power behavior during bring-up</li>
+            <li>Verified that the board could operate as intended after assembly</li>
+          </ul>
+        </article>
+
+        <article class="detail-card">
+          <h3>Testing</h3>
+          <ul>
+            <li>Verified I2C communication with TMP1075</li>
+            <li>Confirmed stable temperature sensor readings</li>
+            <li>Validated that the board functioned as a usable rover sensing module</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Reliable communication depends on both schematic choices and layout discipline</li>
+        <li>Sensor boards benefit from thinking early about how they will connect into a full system</li>
+        <li>Validation after fabrication is essential for confirming that the design assumptions hold in hardware</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
